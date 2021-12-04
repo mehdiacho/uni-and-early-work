@@ -1,0 +1,121 @@
+#include <stdio.h>
+void Area();
+void Perimeter();
+void Students();
+void Grade();
+struct Students
+{
+
+    char Name[25];
+    int x;
+}st1, st2, st3, st4, st5;
+int main()
+{
+    Area();
+    Perimeter();
+    Students();
+    Grade();
+
+    return 0;
+}
+
+void Area()
+{
+    const double Pi =  3.14;
+    float radius;
+    printf("Enter radius of circle:");
+    scanf("%f", &radius);
+    float area = Pi*radius*radius;
+    printf("Area of the circle is: %3.2f\n", area);
+}
+void Perimeter()
+{
+    const double Pi = 3.14;
+    float radius;
+    printf("Enter radius of circle:");
+    scanf("%f", &radius);
+    float circumference = 2*Pi*radius;
+    printf("Perimeter of the circle is: %3.2f", circumference);
+}
+void Grade()
+{
+    int marks;
+    printf("Enter student mark:");
+    scanf("%d", &marks);
+    if(marks > 75)
+    {
+        printf("Grade: A");
+    }
+    else if(marks > 60)
+    {
+        printf("Grade: B");
+    }
+    else if(marks > 45)
+    {
+        printf("Grade: C");
+    }
+    else if(marks > 35)
+    {
+        printf("Grade: D");
+    } else
+    {
+        printf("Grade: E");
+    }
+}
+void Students()
+{
+    struct Students marks[5];
+    //Store first student information
+    printf("\nEnter first student's name:");
+    scanf("%s", st1.Name);
+    printf("Enter first student's marks:");
+    scanf("%i", &marks[0].x);
+
+    //Store second student information
+    printf("\nEnter second student's name:");
+    scanf("%s", st2.Name);
+    printf("Enter second student's marks:");
+    scanf("%i", &marks[1].x);
+
+    //Store third student information
+    printf("\nEnter third student's name:");
+    scanf("%s", st3.Name);
+    printf("Enter third student's marks:");
+    scanf("%i", &marks[2].x);
+
+    //Store fourth student information
+    printf("\nEnter fourth student's name:");
+    scanf("%s", st4.Name);
+    printf("Enter fourth student's marks:");
+    scanf("%i", &marks[3].x);
+
+    //Store fifth student information
+    printf("\nEnter fifth student's name:");
+    scanf("%s", st5.Name);
+    printf("Enter fifth student's marks:");
+    scanf("%i", &marks[4].x);
+
+    do {
+        if (marks[1].x > marks[0].x) {
+            int temp = marks[0].x;
+            marks[0].x = marks[1].x;
+            marks[1].x = temp;
+        } else if (marks[2].x > marks[1].x) {
+            int temp = marks[1].x;
+            marks[1].x = marks[2].x;
+            marks[2].x = temp;
+        } else if (marks[3].x > marks[2].x) {
+            int temp = marks[2].x;
+            marks[2].x = marks[3].x;
+            marks[3].x = temp;
+        } else if (marks[4].x > marks[3].x) {
+            int temp = marks[3].x;
+            marks[3].x = marks[4].x;
+            marks[4].x = temp;
+        } else {
+            printf("Top 3 marks are: \n%i\n%i\n%i", marks[0].x, marks[1].x, marks[2].x);
+        }
+    }while(marks[1].x > marks[0].x || marks[2].x > marks[1].x || marks[3].x > marks[2].x || marks[4].x > marks[3].x);
+    printf("Top 3 marks are: \n%i\n%i\n%i", marks[0].x, marks[1].x, marks[2].x);
+}
+

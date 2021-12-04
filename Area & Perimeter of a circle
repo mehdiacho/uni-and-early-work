@@ -16,12 +16,12 @@ int main()
 void Area(float rad)
 {
     const double Pi =  3.14;
-    float area = Pi*rad*rad;
-    printf("Area of the circle is: %3.2f\n", area);
+    float a = Pi*rad*rad;
+    printf("Area of the circle is: %3.2f\n", a);
 }
 void Perimeter(float rad)
 {
     const double Pi = 3.14;
-    float circumference = 2*Pi*rad;
-    printf("Perimeter of the circle is: %3.2f", circumference);
+    float p = 2*Pi*rad;
+    printf("Perimeter of the circle is: %3.2f", p);
 }
